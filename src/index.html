@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Knockout Form">
+    <meta name="keywords" content="HTML,CSS,JavaScript, Knockout">
+    <meta name="author" content="You Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-icaro col-md-4">
+        <form class="needs-validation col-md-12" novalidate>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom01">Nome</label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome"  data-bind="value: userName" required pattern="^[A-Za-z].*" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userName">
+                        O campo Nome é obrigatório!
+                    </div>
+                </div>
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom02">Sobrenome</label>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" data-bind="value: userLastname" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userLastname">
+                        O campo Sobrenome é obrigatório!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom13">DDD</label>
+                    <input type="text" class="form-control" id="validationCustom13" placeholder="00" value="" data-bind="value: userDDD" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userDDD">
+                        O campo DD é obrigatório!
+                    </div>
+                </div>
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom03">Telefone</label>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="Seu telefone" value="" data-bind="value: userCel"
+                        required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userCel">
+                        O campo Telefone é obrigatório!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-8 mb-8">
+                    <label for="validationCustom06">Cep</label>
+                    <input type="text" class="form-control" id="validationCustom06" placeholder="00000-000" data-bind="value: cep" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: cep">
+                        O campo cep é obrigatório!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="validationCustom10" style="color:#fff">CEP</label>
+                    <a data-bind="click: buttonCep" class="btn btn-primary form-control" style="color:#fff">Validar CEP</a>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom09">Endereço</label>
+                    <input type="text" class="form-control" id="validationCustom09" placeholder="Endereço" data-bind="value: userAddress" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userAddress">
+                        O campo endereço é obrigatório!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom08">Número da Residência</label>
+                    <input type="text" class="form-control" id="validationCustom08" placeholder="Numero" data-bind="value: userNumber" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userNumber">
+                        O campo número da residência é obrigatório!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom11">Complemento (opcional)</label>
+                    <input type="text" class="form-control" id="validationCustom011" placeholder="Complemento" data-bind="value: userComplement">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom07">Bairro</label>
+                    <input type="text" class="form-control" id="validationCustom07" placeholder="Bairro" data-bind="value: userHood" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userHood">
+                        O campo bairro é obrigatório!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom04">Cidade</label>
+                    <input type="text" class="form-control" id="validationCustom04" placeholder="Cidade" data-bind="value: userCity" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userCity">
+                        O campo cidade é obrigatório!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-12">
+                    <label for="validationCustom05">Estado</label>
+                    <input type="text" class="form-control" id="validationCustom05" placeholder="Estado" data-bind="value: userState" required>
+                    <div class="invalid-feedback" data-bind="validationMessage: userState">
+                        O campo estado é obrigatório!
+                    </div>
+                </div>
+            </div>
+            <br />
+            <button data-bind="click: send" class="btn btn-primary" id="send" value="Submit" type="button" disabled>Enviar Formulário</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout-validation/2.0.4/knockout.validation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
