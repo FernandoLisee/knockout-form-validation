@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -13,19 +13,19 @@
 
 <body>
     <div class="container-icaro col-md-4">
-        <form class="needs-validation col-md-12" novalidate>
+        <form data-bind="submit: submitForm" class="needs-validation col-md-12" novalidate>
             <div class="form-row">
                 <div class="col-md-6 mb-6">
                     <label for="validationCustom01">Nome</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
+                    <input data-bind='value: firstName, valueUpdate: "afterkeydown"' type="text" class="form-control" id="validationCustom01" placeholder="Nome" >
                     <div class="invalid-feedback">
                         O campo Nome é obrigatório!
                     </div>
                 </div>
                 <div class="col-md-6 mb-6">
                     <label for="validationCustom02">Sobrenome</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value=""
-                        required>
+                    <input data-bind='value: lastName' type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" value=""
+                        >
                     <div class="invalid-feedback">
                         O campo Sobrenome é obrigatório!
                     </div>
@@ -34,15 +34,14 @@
             <div class="form-row">
                 <div class="col-md-2 mb-2">
                     <label for="validationCustom13">DDD</label>
-                    <input type="text" class="form-control" id="validationCustom13" placeholder="DDD" value="" required>
+                    <input data-bind='value: ddd' type="text" class="form-control" id="validationCustom13" placeholder="DDD" value="" >
                     <div class="invalid-feedback">
-                        O campo DD é obrigatório!
+                        O campo DDD é obrigatório!
                     </div>
                 </div>
                 <div class="col-md-10 mb-10">
                     <label for="validationCustom03">Telefone</label>
-                    <input type="text" class="form-control" id="validationCustom03" placeholder="Telefone" value=""
-                        required>
+                    <input data-bind='value: phone' type="text" class="form-control" id="validationCustom03" placeholder="Telefone" value="" >
                     <div class="invalid-feedback">
                         O campo Telefone é obrigatório!
                     </div>
@@ -51,20 +50,20 @@
             <div class="form-row">
                 <div class="col-md-8 mb-8">
                     <label for="validationCustom06">Cep</label>
-                    <input type="text" class="form-control" id="validationCustom06" placeholder="Cep" required>
+                    <input data-bind='value: cep' type="text" class="form-control" id="validationCustom06" placeholder="Cep" >
                     <div class="invalid-feedback">
                         O campo cep é obrigatório!
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <label for="validationCustom10" style="color:#fff">CEP</label>
-                    <a class="btn btn-primary form-control" style="color:#fff">Validar CEP</a>
+                    <a data-bind="click: validateCep" class="btn btn-primary form-control" style="color:#fff">Validar CEP</a>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom09">Endereço</label>
-                    <input type="text" class="form-control" id="validationCustom09" placeholder="Endereço" required>
+                    <input data-bind='value: address, enable: apiHasNoReturn' type="text" class="form-control" id="validationCustom09" placeholder="Endereço" >
                     <div class="invalid-feedback">
                         O campo endereço é obrigatório!
                     </div>
@@ -73,7 +72,7 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom08">Número da Residência</label>
-                    <input type="text" class="form-control" id="validationCustom08" placeholder="Numero" required>
+                    <input data-bind='value: addressNumber' type="text" class="form-control" id="validationCustom08" placeholder="Numero" >
                     <div class="invalid-feedback">
                         O campo número da residência é obrigatório!
                     </div>
@@ -82,13 +81,13 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom11">Complemento (opcional)</label>
-                    <input type="text" class="form-control" id="validationCustom011" placeholder="Complemento">
+                    <input data-bind='value: complement' type="text" class="form-control" id="validationCustom011" placeholder="Complemento">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom07">Bairro</label>
-                    <input type="text" class="form-control" id="validationCustom07" placeholder="Bairro" required>
+                    <input data-bind='value: district, enable: apiHasNoReturn' type="text" class="form-control" id="validationCustom07" placeholder="Bairro" >
                     <div class="invalid-feedback">
                         O campo bairro é obrigatório!
                     </div>
@@ -97,7 +96,7 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom04">Cidade</label>
-                    <input type="text" class="form-control" id="validationCustom04" placeholder="Cidade" required>
+                    <input data-bind='value: city, enable: apiHasNoReturn' type="text" class="form-control" id="validationCustom04" placeholder="Cidade" >
                     <div class="invalid-feedback">
                         O campo cidade é obrigatório!
                     </div>
@@ -106,14 +105,14 @@
             <div class="form-row">
                 <div class="col-md-12 mb-12">
                     <label for="validationCustom05">Estado</label>
-                    <input type="text" class="form-control" id="validationCustom05" placeholder="Estado" required>
+                    <input data-bind='value: uf, enable: apiHasNoReturn' type="text" class="form-control" id="validationCustom05" placeholder="Estado" >
                     <div class="invalid-feedback">
                         O campo estado é obrigatório!
                     </div>
                 </div>
             </div>
             <br />
-            <button class="btn btn-primary" disabled type="submit">Enviar Formulário</button>
+            <button class="btn btn-primary" type="submit" data-bind='enable: validate'>Enviar Formulário</button>
         </form>
     </div>
 
