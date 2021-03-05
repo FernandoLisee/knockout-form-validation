@@ -1,3 +1,9 @@
 .container-icaro {
     margin:auto;
+    margin-top: 4%;
+}
+
+.validationMessage {
+    color: red;
+    font-size: 16px;
 }
